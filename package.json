@@ -1,6 +1,6 @@
 {
 	"name": "zz.tests",
-	"version": "20160428.0.0",
+	"version": "20160428.0.1",
 	"description": "Tests module for imazzine-developer-lib.",
 	"author": {
 		"name": "Artem Lytvynov",
