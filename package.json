@@ -1,6 +1,6 @@
 {
 	"name": "zz.tests",
-	"version": "20160428.0.2",
+	"version": "20160430.0.0",
 	"description": "Tests module for imazzine-developer-lib.",
 	"author": {
 		"name": "Artem Lytvynov",
@@ -11,6 +11,9 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/buntarb/zz.tests.git"
+	},
+	"publishConfig": {
+		"registry": "http://registry.npmjs.org/"
 	},
 	"dependencies": {
 
