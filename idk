@@ -2,13 +2,14 @@
 
 var idk = require( 'imazzine-developer-kit' );
 var args = process.argv.slice(2);
+
 if( args[ 0 ] === 'compile' ){
 
     if( !args[ 1 ] ){
 
         getHelp( );
-    }
-    if( args[ 1 ] === 'app' ){
+
+    }else if( args[ 1 ] === 'app' ){
 
         idk.compiler.compileApplication( );
 
@@ -32,6 +33,22 @@ if( args[ 0 ] === 'compile' ){
 
          idk.stylesheet.css( );
 
+    }else if( args[ 1 ] === 'doc' ){
+
+         idk.documentation.compileDocument( );
+
+    }else if( args[ 1 ] === 'jsdoc' ){
+
+         idk.documentation.compileJSDoc( );
+
+    }else if( args[ 1 ] === 'models' ){
+
+         idk.compiler.compileModels( );
+
+    }else if( args[ 1 ] === 'svc' && args[ 2 ] ){
+
+         idk.compiler.compileSvc( args[ 2 ] );
+
     }else{
 
         getHelp( );
@@ -49,10 +66,14 @@ if( args[ 0 ] === 'compile' ){
     if( !args[ 1 ] ){
 
         getHelp( );
-    }
-    if( args[ 1 ] === 'server' ){
+
+    }else if( args[ 1 ] === 'server' ){
 
         idk.server.startServer( );
+
+    }else if( args[ 1 ] === 'ide' ){
+
+        idk.ide.startIde( );
     }
 
 }else if( args[ 0 ] === 'update' ){
@@ -85,10 +106,11 @@ function getHelp( ){
     console.log( '' );
     console.log( 'where <command> is one of:' );
     console.log( '    help                see this help' );
-    console.log( '    compile <argument>  running compiling process of specified in argument entity: app, js, soy, css, scss, gss' );
+    console.log( '    compile <argument>  running compiling process of specified in argument entity: app, js, soy, css, scss, gss, doc, jsdoc, svc <namespace>, models' );
     console.log( '    calcdeps            running dependency calculation process' );
     console.log( '    extractmsg          extract i18n messages from soy files' );
     console.log( '    update              update module from repositories' );
     console.log( '    publish             publish module' );
+    console.log( '    start <argument>    start environment of specified in argument entity: server, ide' );
     console.log( '' );
 }
